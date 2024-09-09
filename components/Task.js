@@ -1,44 +1,27 @@
+// components/Task.js
 import React, { useState } from 'react';
-import {Text, View, TextInput } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
-function Task() {
-    const [nombre, asignarNombre] = useState('');
-
+const Task = () => {
+    const   task= {
+        const  [titulo, asignarTitulo] = useState ('');
+                condicion: true,
+    };
     return (
-        <View style={styles.container}>
-         
-           <TextInput 
-           style={styles.input}
-           placeholder='Tu nombre es:' // esto sirve para poner un pre-texto en el input
-          onChangeText={(val) => asignarNombre(val)} // con esta funcion logramos cambiar el estado de la constante que tenermos llamada como asignar nombre
-            />
-            <Text style={styles.estilo}> Hola, {nombre}!</Text>
+        <View>
+        <Text> {task.title}</Text>
+
+        <Text style= {styles.estilo}> {task.condicion ? 'completa' : 'incompleta '}</Text>
         </View>
-    );
+    )
+
 };
 
 const styles = {
-    container :{
-        flex:1,
-        backgroundColor:'#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-
-    input : {
-        borderWidth:1,
-        borderColor: '#777',
-        padding:8,
-        margin:10,
-        width:200,
-    },
-    estilo :{
-    
+    estilo: {
         fontSize: 20,
         fontWeight : 'bold',
+    },
 
-    }
-  
-}
-
+};
 export default Task;
