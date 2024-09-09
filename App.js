@@ -5,7 +5,7 @@ import Greetings from './components/Greetings';
 import UserDetails from './components/UserDetails';  
 import Task from './components/Task';
 import ToggleText from './components/ToggleText';
-// import ToggleText from './components/ToggleText';
+import DynamicForm from './components/DynamicForm';
 
 export default function App() {
   return (
@@ -19,6 +19,7 @@ export default function App() {
       <View style={styles.separador} /> 
       <ToggleText/>
       <View style={styles.separador} /> 
+      <DynamicForm/>
       <StatusBar style="auto" />
       </ScrollView> 
     </SafeAreaView>

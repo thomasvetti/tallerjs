@@ -14,7 +14,8 @@ const Task = () => {
         <Text style= {styles.estilo}> {task.condicion ? 'completa' : 'incompleta '}</Text>
         </View>
     )
-
+// en la linea 14 se crea una condicion,  en donde true es completa y false es incompleta 
+// para eso usamos el operador ternario ? en donde se evalua  task.condicion y segun el valor renderiza el texto
 };
 
 const styles = {
