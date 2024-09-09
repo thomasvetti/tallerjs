@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
 const Task = () => {
-    const   task= {
-        const  [titulo, asignarTitulo] = useState ('');
-                condicion: true,
+    const   task= { // aca se crea el objeto 
+        titulo: 'la tarea esta:',
+        condicion: false,
     };
     return (
         <View>
-        <Text> {task.title}</Text>
+        <Text style ={styles.estilo}> {task.titulo}</Text>
 
         <Text style= {styles.estilo}> {task.condicion ? 'completa' : 'incompleta '}</Text>
         </View>
