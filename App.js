@@ -1,16 +1,17 @@
 import React from 'react';
-import { SafeAreaView, View, ScrollView} from 'react-native';
+import { SafeAreaView, View, ScrollView,Text} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Greetings from './components/Greetings';
 import UserDetails from './components/UserDetails';  
 import Task from './components/Task';
 import ToggleText from './components/ToggleText';
 import DynamicForm from './components/DynamicForm';
+import ClickCounter from './components/ClickCounter';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.contenedor}>
-      <ScrollView>
+      <ScrollView >
       <Greetings />
       <View style={styles.separador} />
       <UserDetails />
@@ -20,7 +21,12 @@ export default function App() {
       <ToggleText/>
       <View style={styles.separador} /> 
       <DynamicForm/>
+      <View style={styles.separador} /> 
+      <ClickCounter/>
       <StatusBar style="auto" />
+      
+
+    
       </ScrollView> 
     </SafeAreaView>
   );
@@ -32,8 +38,8 @@ const styles ={
     backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 60,
-    marginTop: 100,
+    margin: 0,
+    top: 10
   
    
   },
