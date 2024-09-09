@@ -1,6 +1,6 @@
 // components/Task.js
 import React, { useState } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View } from 'react-native';
 
 const Task = () => {
     const   task= { // aca se crea el objeto 
@@ -8,7 +8,7 @@ const Task = () => {
         condicion: false,
     };
     return (
-        <View>
+        <View style={styles.container}>
         <Text style ={styles.estilo}> {task.titulo}</Text>
 
         <Text style= {styles.estilo}> {task.condicion ? 'completa' : 'incompleta '}</Text>
@@ -18,6 +18,12 @@ const Task = () => {
 };
 
 const styles = {
+    container :{
+        flex:1,
+        backgroundColor:'#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     estilo: {
         fontSize: 20,
         fontWeight : 'bold',
