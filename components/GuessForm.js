@@ -1,29 +1,31 @@
-// components/GuessForm.js
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 
-const GuessForm = ({ correctAnswer }) => {
-  const [guess, setGuess] = useState('');
-  const [result, setResult] = useState('');
+const GuessForm = ({ respuestaCorrecta }) => {
+  const [adivinanza, asignarAdivinanza] = useState('');
+  const [resultado, asignarResultado] = useState('');
 
   const handleSubmit = () => {
-    if (guess.toLowerCase() === correctAnswer.toLowerCase()) {
-      setResult('¡Correcto!');
+    if (adivinanza.toLowerCase() === respuestaCorrecta.toLowerCase()) {
+      asignarResultado('¡Correcto!');
     } else {
-      setResult('Incorrecto. Inténtalo de nuevo.');
+      asignarResultado('Incorrecto. Inténtalo de nuevo.');
     }
   };
-
+// esta linea  if (adivinanza.toLowerCase() === respuestaCorrecta.toLowerCase()) tiene
+// el valor del usuario ingresa, la respuesta correcta alamcenada en el componente y lo mas importante que es == que basicamente si o si 
+// tiene que ser el valor asinado para ganar la adivinanza
+// el lowercase se pone para que la respuesta siempre sea en minuscula y asi evitar problemas 
   return (
     <View style={styles.contenedor}>
       <TextInput
         style={styles.input}
         placeholder="Escribe tu adivinanza"
-        value={guess}
-        onChangeText={setGuess}
+        value={adivinanza}
+        onChangeText={asignarAdivinanza}
       />
       <Button title="Enviar" onPress={handleSubmit} />
-      {result ? <Text style={styles.resultado}>{result}</Text> : null}
+      {resultado ? <Text style={styles.estilo}>{resultado}</Text> : null}
     </View>
   );
 };
@@ -40,7 +42,7 @@ const styles = {
     padding: 10,
     marginBottom: 10,
   },
-  resultado: {
+  estilo: {
     marginTop: 10,
     fontSize: 18,
     fontWeight: 'bold',
