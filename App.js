@@ -11,6 +11,7 @@ import ClickCounter from './components/ClickCounter';
 import RegistrationForm from './components/RegistrationForm';
 import ThemeSwitcher from './components/ThemeSwitcher'; 
 import AlertButton from './components/AlertButton';
+import ParentCounter from './components/ParentCounter';
 
 export default function App() {
   const [infousario, setUserData] = useState(null); // creamos un estado para actualizar la informacion que importamos de registrationfrom /esta en null porque no hay datos iniciales 
@@ -22,7 +23,7 @@ export default function App() {
     asignarTema(temaSeleccionado); // aqui pos se actualiza el tema 
   };
   
-  const mensajeAlerta = "alo";
+  const MensajeAlerta = "alo";
 
 // en la linea   <RegistrationForm onRegister={confirmacionRegistroUsuario} /> es un intermediario
 // basicamente es una funciin que pasa la informacion a  RegistrationForm  a travez de onRegister 
@@ -66,8 +67,9 @@ export default function App() {
         <Text style ={styles.estilo}>cambiar tema de color</Text>
         <ThemeSwitcher cambiaTemaColor={cambiaElTema} temaActual={tema} />
         <View style={styles.separador} />
-        <AlertButton message={mensajeAlerta} /> 
-
+        <AlertButton Mensaje={MensajeAlerta} /> 
+        <View style={styles.separador} />
+        <ParentCounter />
         <StatusBar style="auto" />
       </ScrollView>
     </SafeAreaView>

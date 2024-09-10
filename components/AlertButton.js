@@ -1,20 +1,20 @@
 import React from 'react';
-import { View, Button, Alert } from 'react-native';
+import { View, Button, Alert  } from 'react-native';
 
-const AlertButton = ({ mensaje }) => {
-  const mostrarAlerta = () => {
-    Alert.alert(mensaje); // Muestra la alerta con el mensaje recibido
+const AlertButton = ({ Mensaje }) => {
+  const AlertaMensaje = () => {
+    Alert.alert(Mensaje); // Muestra la alerta con el mensaje recibido
   };
 
   return (
-    <View style={styles.container}>
-      <Button title="Mostrar Alerta" onPress={mostrarAlerta} />
+    <View style={styles.contenedor}>
+      <Button title="Mostrar Alerta" onPress={AlertaMensaje} />
     </View>
   );
 };
 
 const styles = {
-  container: {
+    contenedor: {
     margin: 20,
   },
 };
