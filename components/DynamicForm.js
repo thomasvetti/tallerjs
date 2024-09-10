@@ -36,7 +36,7 @@ const styles ={
     borderWidth:1,
     borderColor: '#777',
     padding:8,
-    margin:10,
+    margin:20,
     width:200,
 },
   estilo :{

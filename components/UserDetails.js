@@ -15,7 +15,7 @@ function UserDetails() {
           onChangeText={(val) => asignarNombre(val)} 
             />
             <TextInput
-            keyboardType='numeric' 
+            keyboardType='numeric' // esto es para que se abra el teclado numerico
            style={styles.input}
            placeholder='Tu edad es:'
           onChangeText={(val) => asignarEdad(val)} 
@@ -37,6 +37,7 @@ const styles = {
         backgroundColor:'#fff',
         alignItems: 'center',
         justifyContent: 'center',
+       
     },
 
     input : {
