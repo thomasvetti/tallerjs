@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-import { SafeAreaView, View, ScrollView, Text,  } from 'react-native';
+import { SafeAreaView, View, ScrollView, Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Greetings from './components/Greetings';
 import UserDetails from './components/UserDetails';
@@ -12,7 +11,8 @@ import RegistrationForm from './components/RegistrationForm';
 import ThemeSwitcher from './components/ThemeSwitcher'; 
 import AlertButton from './components/AlertButton';
 import ParentCounter from './components/ParentCounter';
-
+import ImageGallery from './components/ImageGallery';
+import Game from './components/Game';
 export default function App() {
   const [infousario, setUserData] = useState(null); // creamos un estado para actualizar la informacion que importamos de registrationfrom /esta en null porque no hay datos iniciales 
   const [tema, asignarTema] = useState('light'); // Estado para el tema
@@ -70,8 +70,13 @@ export default function App() {
         <AlertButton Mensaje={MensajeAlerta} /> 
         <View style={styles.separador} />
         <ParentCounter />
+        <View style={styles.separador} />
+        <Game />
         <StatusBar style="auto" />
       </ScrollView>
+
+      <ImageGallery/>
+      
     </SafeAreaView>
   );
 }
