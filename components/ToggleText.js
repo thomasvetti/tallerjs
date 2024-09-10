@@ -25,7 +25,7 @@ const ToggleText = () => { //definimos el estado del texto  con useState
 const styles ={
   contenedor: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
    

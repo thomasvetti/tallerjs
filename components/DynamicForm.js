@@ -27,7 +27,7 @@ function DynamicForm() {
 const styles ={
   contenedor: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
    

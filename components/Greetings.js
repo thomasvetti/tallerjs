@@ -20,7 +20,7 @@ function Greetings() {
 const styles = {
     container :{
         flex:1,
-        backgroundColor:'#fff',
+        // backgroundColor:'#fff',
         alignItems: 'center',
         justifyContent: 'center',
     },

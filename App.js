@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { SafeAreaView, View, ScrollView, Text, StyleSheet } from 'react-native';
+
+import { SafeAreaView, View, ScrollView, Text,  } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Greetings from './components/Greetings';
 import UserDetails from './components/UserDetails';
@@ -8,13 +9,19 @@ import ToggleText from './components/ToggleText';
 import DynamicForm from './components/DynamicForm';
 import ClickCounter from './components/ClickCounter';
 import RegistrationForm from './components/RegistrationForm';
+import ThemeSwitcher from './components/ThemeSwitcher'; 
+
 
 export default function App() {
   const [infousario, setUserData] = useState(null); // creamos un estado para actualizar la informacion que importamos de registrationfrom /esta en null porque no hay datos iniciales 
-
+  const [tema, asignarTema] = useState('light'); // Estado para el tema
   const confirmacionRegistroUsuario = (data) => {
     setUserData(data);
   };
+  const cambiaElTema = (temaSeleccionado) => { // es una funcion que va a recibir un argumento 
+    asignarTema(temaSeleccionado); // aqui pos se actualiza el tema 
+  };
+ 
 
 // en la linea   <RegistrationForm onRegister={confirmacionRegistroUsuario} /> es un intermediario
 // basicamente es una funciin que pasa la informacion a  RegistrationForm  a travez de onRegister 
@@ -28,8 +35,9 @@ export default function App() {
 
 
   return (
-    <SafeAreaView style={styles.contenedor}>
+    <SafeAreaView style={tema === 'light' ? styles.lightContainer : styles.darkContainer}>
       <ScrollView>
+        
         <Greetings />
         <View style={styles.separador} />
         <UserDetails />
@@ -51,7 +59,11 @@ export default function App() {
             <Text>Correo: {infousario.Correo}</Text>
             <Text>Contraseña: {infousario.Contraseña}</Text>
           </View>
+          
         )}
+        <View style={styles.separador} />
+        <Text style ={styles.estilo}>cambiar tema de color</Text>
+        <ThemeSwitcher cambiaTemaColor={cambiaElTema} temaActual={tema} />
 
         <StatusBar style="auto" />
       </ScrollView>
@@ -63,10 +75,20 @@ export default function App() {
 //  {infousario &&  esta linea de codigo es una condicion que nos permite mostar o no la informacion que usuario registra siempre y cuando 
 // el valor no sea null
 // si "infousario" tiene algun valor se carga el view con la informacion registrada por el usuario 
+
+// <ThemeSwitcher cambiaTemaColor={cambiaElTema} temaActual={tema} /> aqui llamamos ThemeSwitcher para pasar los parametros
 const styles ={
-  contenedor: {
+  lightContainer: {
     flex: 1,
     backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 0,
+    top: 10,
+  },
+  darkContainer: {
+    flex: 1,
+    backgroundColor: '#333',
     justifyContent: 'center',
     alignItems: 'center',
     margin: 0,
@@ -84,11 +106,16 @@ const styles ={
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 5,
-    backgroundColor: '#f9f9f9',
+    // backgroundColor: '#f9f9f9',
   },
   tituloregistro: {
     fontSize: 18,
     marginBottom: 10,
     fontWeight: 'bold',
   },
+  estilo: {
+    fontSize: 20,
+    fontWeight : 'bold',
+
+  }
 };
